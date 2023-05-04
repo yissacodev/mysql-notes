@@ -9,16 +9,18 @@ USE curso_db;
 * 	Comentario de tabla
 * 
 * MAX_ROWS [=] value | MIN_ROWS [=] value
-* Establecesr maximo y minimo numero de files
+* 	Establecer maximo y minimo numero de files
 * 
 * CHARACTER SET [=] charset_name
-* Set de caracteres
+* 	Set de caracteres
 * 	https://dev.mysql.com/doc/refman/8.0/en/charset-charsets.html
 * 
 * 	SHOW CHARACTER SET;
 * 
 * ENGINE [=] engine_name
-* Motor de tablas
+* 	Motor de tablas
+*
+* Ver mas: https://dev.mysql.com/doc/refman/8.0/en/create-table.html
 */
 CREATE TABLE IF NOT EXISTS usuarios (
 	usuario_id INT UNSIGNED AUTO_INCREMENT,
