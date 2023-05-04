@@ -20,6 +20,7 @@ USE curso_db;
  *  Atributo nulo
  *  
  *  ver más: https://dev.mysql.com/doc/refman/8.0/en/create-table.html
+ * https://www.cockroachlabs.com/blog/sql-add-constraint/#:~:text=ADD%20CONSTRAINT%20is%20a%20SQL,PRIMARY%20KEY%20(col1%2C%20col2)%3B
  */
 
 CREATE TABLE IF NOT EXISTS usuarios (
