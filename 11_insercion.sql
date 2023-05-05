@@ -35,13 +35,21 @@ INSERT INTO usuarios (nombre, apellido, edad, correo) VALUES
 
 
 -- Forma 5. Importación de archivos delimitados por coma CSV
+LOAD DATA INFILE 'D:\\programacion\\proyectos-bases-de-datos\\mysql\\usuarios.csv'
+INTO TABLE usuarios
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n';
 
--- Forma 6. Importacion de datos mediante archivos planos delimitados
--- por punto y coma tipo CSV, sin encabezado
+-- Forma 6. Importación de datos desde un archivo plano 'csv' con algun delimitador
+-- Pueden estar en orden o no. SE ESPECIFICA LOS ATRIBUTOS DE LA TABLA
+-- NO SE AGREGA EL ID, ya que es autoincremental
 
--- Forma 7. Importación de datos desde un archivo plano 'csv' delimitado por '|'
--- con encabezado  cuyos campos estan en  diferente orden que la tabla
+LOAD DATA INFILE 'D:\\programacion\\proyectos-bases-de-datos\\mysql\\usuarios_algunos_atributos.csv' 
+INTO TABLE usuarios
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+(nombre, apellido, edad, correo,direccion);
 
--- Forma 8. Importacion de datos mediante archivos planos delimitados
--- por  tabulador (delimitador por defecto) tipo CSV, sin encabezado
--- en el mismo orden que el esquema
+-- https://dev.mysql.com/doc/refman/8.0/en/load-data.html
