@@ -35,7 +35,7 @@ INSERT INTO usuarios (nombre, apellido, edad, correo) VALUES
 
 
 -- Forma 5. Importación de archivos delimitados por coma CSV
-LOAD DATA INFILE 'D:\\programacion\\proyectos-bases-de-datos\\mysql\\usuarios.csv'
+LOAD DATA INFILE 'D:\\programacion\\proyectos-bases-de-datos\\mysql\\datafiles\\usuarios.csv'
 INTO TABLE usuarios
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -44,12 +44,15 @@ LINES TERMINATED BY '\r\n';
 -- Forma 6. Importación de datos desde un archivo plano 'csv' con algun delimitador
 -- Pueden estar en orden o no. SE ESPECIFICA LOS ATRIBUTOS DE LA TABLA
 -- NO SE AGREGA EL ID, ya que es autoincremental
+-- IGNORE: omite las primeras lineas especificadas
 
-LOAD DATA INFILE 'D:\\programacion\\proyectos-bases-de-datos\\mysql\\usuarios_algunos_atributos.csv' 
+LOAD DATA INFILE 'D:\\programacion\\proyectos-bases-de-datos\\mysql\\datafiles\\usuarios_algunos_atributos.csv' 
 INTO TABLE usuarios
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
 (nombre, apellido, edad, correo,direccion);
 
 -- https://dev.mysql.com/doc/refman/8.0/en/load-data.html
+-- https://blog.skyvia.com/how-to-import-csv-file-into-mysql-table-in-4-different-ways/
