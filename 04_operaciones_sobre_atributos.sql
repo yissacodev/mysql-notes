@@ -14,3 +14,6 @@ ALTER TABLE usuarios CHANGE nacimiento fechanacimiento VARCHAR(15);
 
 -- Eliminar
 ALTER TABLE usuarios DROP COLUMN fecha_nacimiento;
+
+-- Agregacion total
+ALTER TABLE users ADD id INT UNSIGNED NOT NULL AUTO_INCREMENT;

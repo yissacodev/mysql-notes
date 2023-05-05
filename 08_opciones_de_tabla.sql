@@ -21,7 +21,6 @@ USE curso_db;
 * 	Motor de tablas
 *
 * Ver mas: https://dev.mysql.com/doc/refman/8.0/en/create-table.html
-* https://stackoverflow.com/questions/1485668/how-to-set-initial-value-and-auto-increment-in-mysql
 */
 CREATE TABLE IF NOT EXISTS usuarios (
 	usuario_id INT UNSIGNED AUTO_INCREMENT,

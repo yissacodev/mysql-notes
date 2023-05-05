@@ -1,17 +1,11 @@
 USE curso_db;
 
-/* Constraints
+/* Constraints LLAVE PRIMARIA
  * PRIMARY KEY
  *  Establece llave primaria
  *  
  *  Como funcion
  * 	PRIMARY KEY(usuario_id)
- * 
- * UNIQUE
- *  Establece atributo unico, sus valores no se pueden repetir
- * 
- *  Como funcion
- *  UNIQUE KEY(attr)
  * 
  * NOT NULL
  *  Atributo no puede ser nulo
@@ -27,7 +21,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
 	usuario_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	nombre VARCHAR(30) NOT NULL,
 	apellido VARCHAR(30) NOT NULL,
-	correo VARCHAR(50) UNIQUE,
+	correo VARCHAR(50),
 	direccion VARCHAR(100) DEFAULT "Sin direccion",
 	edad INT DEFAULT 0 COMMENT 'entero'
 );
@@ -40,6 +34,15 @@ CREATE TABLE IF NOT EXISTS usuarios (
 	correo VARCHAR(50),
 	direccion VARCHAR(100) DEFAULT "Sin direccion",
 	edad INT DEFAULT 0 COMMENT 'entero',
-	PRIMARY KEY(usuario_id),
-	UNIQUE KEY(correo)
+	PRIMARY KEY(usuario_id)
 );
+
+
+-- Forma 2. Alterando el esquema de la tabla
+ ALTER TABLE testtable ADD PRIMARY KEY(id_tabla);
+
+-- Forma 3. Personalizando el nombre de la constraint (COMO OPERACION, LO REALIZA PERO IGNORA EL NOMBRE)
+ALTER TABLE testtable ADD CONSTRAINT pk_id_tabla PRIMARY KEY(id_tabla);
+
+-- ELIMINAR LLAVE PRIMARIA Y REASIGNAR OTRA
+ALTER TABLE  testtable DROP PRIMARY KEY, ADD PRIMARY KEY (  'name_table' );
