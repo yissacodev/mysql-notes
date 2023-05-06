@@ -39,5 +39,7 @@ ALTER TABLE usuarios ADD UNIQUE(correo);
 -- Forma 3. Personalizando el nombre del constraint
 ALTER TABLE usuarios ADD CONSTRAINT uk_correo UNIQUE(correo);
 
+
 -- Eliminar llave candidata
-ALTER TABLE usuarios DROP INDEX correo;
+Forma 1. ALTER TABLE usuarios DROP INDEX correo;
+Forma 2. ALTER TABLE usuarios DROP CONSTRAINT uk_correo;

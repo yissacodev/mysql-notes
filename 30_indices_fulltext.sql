@@ -18,11 +18,17 @@ CREATE TABLE caballeros (
 
 -- Forma 2. Creando con ALTER
 ALTER TABLE caballeros ADD FULLTEXT fi_search(armadura, rango, signo, ejercito, pais);
+ALTER TABLE caballeros ADD FULLTEXT INDEX  fi_search(armadura, rango, signo, ejercito, pais);
 
 -- Forma 3. Creando con CREATE FULL INDEX
 CREATE FULLTEXT INDEX fi_search ON caballeros(armadura, rango, signo, ejercito, pais);
 
 -- Eliminar indice
 DROP INDEX fi_search ON caballeros;
+ALTER TABLE caballeros DROP INDEX fi_search;
 
 -- Ver mas: https://www.anerbarrena.com/mysql-create-index-5281/
+
+-- USO DE INDICE FULLTEXT
+-- La coindicencia se busca dentro de AGAINST('coincidencia', ...)
+SELECT * FROM caballeros WHERE MATCH(armadura, rango, signo, ejercito, pais) AGAINST('Oro' IN BOOLEAN MODE);
