@@ -33,5 +33,17 @@ CREATE TABLE IF NOT EXISTS usuarios (
 	UNIQUE KEY(correo)
 ) AUTO_INCREMENT = 100, COMMENT = 'Tabla de usuarios';
 
+/*Juego de carateres*/
+CREATE TABLE IF NOT EXISTS usuarios (
+	usuario_id INT UNSIGNED AUTO_INCREMENT,
+	nombre VARCHAR(30) NOT NULL,
+	apellido VARCHAR(30) NOT NULL,
+	correo VARCHAR(50),
+	direccion VARCHAR(100) DEFAULT "Sin direccion",
+	edad INT DEFAULT 0 COMMENT 'entero',
+	PRIMARY KEY(usuario_id),
+	UNIQUE KEY(correo)
+) AUTO_INCREMENT = 100, COMMENT = 'Tabla de usuarios', DEFAULT CHARSET="utf8mb4";
 
+-- Ver juegos de caracteres disponibles
 SHOW CHARACTER SET;
