@@ -63,7 +63,7 @@ INSERT INTO entornos (entorno) VALUES
   ("On Rails", 4, 2);
 
  ----------------------------
-Ejemplo:
+-- Ejemplo:
 -- Actualizar el id del lenguaje 3 que pertenece a PYTHON de la tabla lenguajes
 -- Ejecutar antes y despues
 SELECT * FROM frameworks f INNER JOIN lenguajes l ON f.lenguaje = l.lenguaje_id;
