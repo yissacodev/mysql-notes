@@ -74,3 +74,16 @@ UPDATE lenguajes SET lenguaje_id = 13 WHERE lenguaje_id = 3;
 
 -- Restrigir la eliminacion de registros relacionados (SALE ERROR)
 DELETE FROM lenguajes WHERE lenguaje_id = 4;
+
+-- Crear con ALTER
+-- Primero eliminar la constraint
+ALTER TABLE TABLENAME
+drop CONSTRAINT FK_CONSTRAINTNAME;
+
+-- Luego recrearla
+ALTER TABLE TABLENAME
+ADD CONSTRAINT FK_CONSTRAINTNAME
+    FOREIGN KEY (FId)
+    REFERENCES OTHERTABLE
+        (Id)
+    ON DELETE CASCADE ON UPDATE NO ACTION;
