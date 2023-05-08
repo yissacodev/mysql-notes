@@ -1,41 +1,5 @@
--- PROCEDIMIENTO (STORE PROCEDURES)
--- Son estructuras de ejecución de lógica similares a las funciones en 
--- Cualquier otro lenguaje (Ver al final las instrucciones necesarias)
--- Ver más: https://dev.mysql.com/doc/refman/5.7/en/alter-procedure.html
-
--- Crear procedimientos
-DELIMITER // -- Establecer delimitador //
-
-CREATE PROCEDURE sp_obtener_suscripciones()
-	BEGIN -- Inicia el codigo
-		SELECT * FROM suscripciones;
-		
-		
-	END // -- Finaliza
-DELIMITER ;
-
-
-
-
--- Invocar el procedimiento
-CALL sp_obtener_suscripciones();
-
--- Modificar procedimiento
-ALTER PROCEDURE sp_obtener_suscripciones()
-	BEGIN
-		-- Nuevas Sentencias...
-	END
-
--- Eliminar procedimiento
-DROP PROCEDURE sp_obtener_suscripciones;
-
--- Listar Store procedures de la base de datos
-SHOW PROCEDURE STATUS WHERE db = 'servicio_suscripcion_db';
-
-
-------------------------------------------------
--- Base de datos e instrucciones necesarias:
-CREATE DATABASE servicio_suscripcion;
+CREATE DATABASE servicio_suscripcion_db;
+USE servicio_suscripcion_db;
 
 CREATE TABLE suscripciones (
   suscripcion_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -92,9 +56,3 @@ CREATE TABLE actividad_clientes(
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 );
-
-SELECT * FROM suscripciones;
-SELECT * FROM clientes;
-SELECT * FROM tarjetas;
-SELECT * FROM servicios;
-SELECT * FROM actividad_clientes;
