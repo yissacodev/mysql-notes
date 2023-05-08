@@ -32,5 +32,5 @@ ALTER TABLE usuarios RENAME users
 -- Eliminar tabla
 DROP TABLE usuarios;
 
--- Variar tabla
+-- Vaciar tabla
 TRUNCATE TABLE usuarios;
