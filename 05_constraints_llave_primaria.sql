@@ -38,6 +38,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
 );
 
 
+
+
 -- Forma 2. Alterando el esquema de la tabla
  ALTER TABLE testtable ADD PRIMARY KEY(id_tabla);
 
@@ -46,3 +48,26 @@ ALTER TABLE testtable ADD CONSTRAINT pk_id_tabla PRIMARY KEY(id_tabla);
 
 -- ELIMINAR LLAVE PRIMARIA Y REASIGNAR OTRA
 ALTER TABLE  testtable DROP PRIMARY KEY, ADD PRIMARY KEY (  'name_table' );
+
+
+/* Llave compuesta
+Suelen encontrarse en entidades resultantes de cardinalidad Muchos a Muchos
+Se asignan a dos o más llaves foraneas.
+
+Ver en repositorio: 
+	Problemas de bases de datos
+	https://github.com/acosta032/problemas-de-bases-de-datos
+
+Ejemplo: esta es la tabla resultante de N:M
+Sus tablas relacionadas son alumno y asignatura:
+
+CREATE TABLE IF NOT EXISTS calificaciones(
+	id_alumno INT UNSIGNED NOT NULL,
+	id_asig INT UNSIGNED NOT NULL,
+	nota DECIMAL(3,2) NOT NULL,
+	FOREIGN KEY(id_alumno) REFERENCES alumnos(id_alumno),
+	FOREIGN KEY(id_asig) REFERENCES asignaturas(id_asig),
+
+	PRIMARY KEY(id_alumno, id_asig) -- Llave compuesta
+);
+*/
