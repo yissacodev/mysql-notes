@@ -16,10 +16,34 @@ CREATE TABLE caballeros (
   FOREIGN KEY(pais) REFERENCES paises(pais_id)
 );
 
--- Forma 2. Creando con la ALTER
+-- Forma 2. En la definicion de la tabla con nombre de PERSONALIZADO
+CREATE TABLE caballeros (
+  caballero_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(30),
+  armadura INT UNSIGNED,
+  rango INT UNSIGNED,
+  signo INT UNSIGNED,
+  ejercito INT UNSIGNED,
+  pais INT UNSIGNED,
+  /*Nombre de constraint personalizado
+  Ver en repositorio Problemas de bases de datos
+  Problema 1.1 
+  https://github.com/acosta032/problemas-de-bases-de-datos
+  */
+  KEY caballeros_armadura_fk(armadura),
+  CONSTRAINT caballeros_armadura_fk FOREIGN KEY(armadura) REFERENCES armaduras(armadura_id),
+
+  FOREIGN KEY(rango) REFERENCES rangos(rango_id),
+  FOREIGN KEY(signo) REFERENCES signos(signo_id),
+  FOREIGN KEY(ejercito) REFERENCES ejercitos(ejercito_id),
+  FOREIGN KEY(pais) REFERENCES paises(pais_id)
+);
+
+
+-- Forma 3. Creando con la ALTER
 ALTER TABLE caballeros ADD FOREIGN KEY(armadura) REFERENCES armaduras(armadura_id);
 
--- Forma 3. Creando con nombre de constraint
+-- Forma 4. Creando con nombre de constraint
 ALTER TABLE caballeros ADD CONSTRAINT armadura_fk FOREIGN KEY(armadura) REFERENCES armaduras(armadura_id);
 
 -- Eliminar llave foranea
