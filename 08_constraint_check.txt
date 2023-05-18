@@ -1,2 +1,5 @@
 CON LAS FUNCIONES DE CADENA, NUMERO ETC, Y OPERADORES LOGICOS SE PUEDE RESTRINGRI UN ATRIBUTO CON CHECK
 https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char-length
+
+
+https://tutorialesdeaplicaciones.com/creacion-del-script-de-la-base-de-datos/

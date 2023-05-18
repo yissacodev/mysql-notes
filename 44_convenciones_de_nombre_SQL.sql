@@ -44,6 +44,9 @@ Constraints
         FK_tablalocal_tablareferenciada
         FK_subjects_signatures
 
+    Constraints CHECK
+        CHK_atributo_tabla
+
 Marcas de tiempo a cada cabla
     Añadir a la tabla los campos especiales 
         created_at
