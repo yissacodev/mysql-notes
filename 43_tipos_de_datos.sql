@@ -1,4 +1,30 @@
 /*
+CHAR(10)
+	- Guarda una longitud de (bytes) caracteres ESPECIFICA
+	- Si CHAR(10) se guarda un "Hola" los espacios restantes se llenan con ESPACIOS
+	- Siempre ocupan la misma longitud Llenos o no
+	- Es más rápido que varchar
+
+	USOS:
+	Si vamos a almacenar datos cuyo tamaño sabemos de antemano, es mejor usar CHAR
+	
+
+VARCHAR(10)
+	- Guarda una longitud de bytes variable
+	- Si VARCHAR(100) guarda un "Hola" se usará 1 o más Bytes para información extra 
+	es decir se usarán 5 o 6 bytes en total
+	
+	- El gran límite para VARCHAR es 65,535 bytes
+
+	USOS:
+	En caso de que vayamos a almacenar datos de longitud variable que 
+	pueden ser más cortos que el límite, usamos VARCHAR.
+
+Ver más: https://parzibyte.me/blog/2018/09/25/diferencia-entre-char-y-varchar-en-mysql/
+*/
+
+
+/*
 DECIMAL(X,Y)
     X Todos los digitos
     Y digitos a la derecha del punto decimal
