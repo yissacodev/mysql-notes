@@ -21,6 +21,16 @@ VARCHAR(10)
 	pueden ser más cortos que el límite, usamos VARCHAR.
 
 Ver más: https://parzibyte.me/blog/2018/09/25/diferencia-entre-char-y-varchar-en-mysql/
+
+
+TEXT
+	Para almacenar cualquier cantidad de texto plano
+	No permite la restricción DEFALUT
+	No funciona con indices FULLTEXT
+
+Si esta caracteristica cambia verificarla en
+Ver más: https://dev.mysql.com/doc/refman/8.0/en/data-type-defaults.html
+		
 */
 
 
