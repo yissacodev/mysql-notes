@@ -1,0 +1,21 @@
+Api de peliculas y series
+https://www.omdbapi.com
+
+Api de banderas del mundo
+https://flagsapi.com
+
+Api de avatares genericos con iniciales de nombres
+https://ui-avatars.com
+
+Api de paises
+https://api.first.org
+	
+	Ir a Public methods
+		GET /teams
+		GET /news
+		GET /channels
+		GET /countries
+	>	GET /epss
+
+Generador de datos
+mockaroo.com
